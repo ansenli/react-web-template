@@ -17,7 +17,7 @@ class Login extends Component {
         return (
             <Fragment>
               <div>
-                获取数据为：{this.props.num}
+                获取数据为：
               </div>
               <button onClick={this.addNumTap} >加一哈哈</button>
             </Fragment>  
