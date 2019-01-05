@@ -1,4 +1,3 @@
-import axios from 'axios'
 /* paams传参格式
 params: {
   method: 'POST',
@@ -6,6 +5,7 @@ params: {
     mobile: this.phone
   }
 } */
+import axios from 'axios'
 const unifyRequest = async (params = {}, url) => {
   // tip.loading()
   let data = params.query || {}
@@ -19,9 +19,9 @@ const unifyRequest = async (params = {}, url) => {
   //     'Authorization': 'Bearer ' + accessToken
   //   }
   // }
-  header = { ...header,
-    'Authorization': 'Bearer ' + accessToken
-  }
+  // header = { ...header,
+  //   'Authorization': 'Bearer ' + accessToken
+  // }
   const res = await axios({
     method: params.method || 'GET', // `method` 是创建请求时使用的方法 默认是 get
     url: url, // `url` 是用于请求的服务器 URL
@@ -35,7 +35,6 @@ const unifyRequest = async (params = {}, url) => {
   // 存cookie
   return res
 }
-
-module.exports = {
-  unifyRequest
+export {
+  unifyRequest,
 }

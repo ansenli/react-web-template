@@ -11,9 +11,10 @@ const defaultState = {
 }
 export default handleActions({
   [ASYNC_ADDNUM](state, action) {
+    console.log("ASYNC_ADDNUM....action:",action)
     return {
       ...state,
-      num: state.num + 1
+      num: action.payload
     };
   },
   [ASYNC_SETNAME](state, action) {

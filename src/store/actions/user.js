@@ -8,17 +8,19 @@ import {
 import {
   addNum,
   setNum
-} from '@api/user'
+} from '@/api/user'
 // 调用后端接口
 const action_addNum = async function(params){
   const jsonData = await addNum({
     query:params,
     method:'GET'
   })
-  if(jsonData.statusCode = 200){
+  console.log("jsonData.....",jsonData)
+  if(jsonData.statusCode === 200){
     return jsonData;
   }else {
-    return false;
+    // return false;
+    return jsonData;
   }
 };
 const action_setNum = async function(params){
@@ -26,7 +28,7 @@ const action_setNum = async function(params){
     query:params,
     method:'POST'
   })
-  if(jsonData.statusCode = 200){
+  if(jsonData.statusCode === 200){
     return jsonData;
   }else {
     return false;
