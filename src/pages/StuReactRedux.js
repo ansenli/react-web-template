@@ -1,40 +1,24 @@
-import {connect} from 'react-redux'
+import React, { Component ,Fragment} from 'react';
+import { connect } from 'react-redux'
+//import { login } from '../../redux/user.redux'
+ 
+@connect( 
+  (state)=>{
+    console.log("state.user....",state.user)
+    return state.user
+  },{
 
-import {createAction} from 'redux-actions'
-// 引入组件
-
-import Stu from './Stu'
-
-// react-redux 封装组件
-
-// 确定哪些Redux 全局state 是我们组件想要通过props获取的？
-
-function mapStateToProps(state){
-  return {
-    stuRedux:state.stuRedux
   }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-     ADD_NUM:()=>{
-      let activet = createAction("ADD_NUM",()=>{
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve()
-          }, 1000);
-        })
-      })
-      console.log(activet())
-      dispatch(activet()) 
-    },
-    SET_NAME:(val)=>{
-      dispatch({type:"SET_NAME",payload:{name:val}})
+)
+class Login extends Component {
+    render(){
+        return (
+            <Fragment>
+              <div>
+                获取数据为：{this.props.name}
+              </div>
+            </Fragment>  
+        )
     }
-  }
 }
-
-// 封装传递state和dispatch
-let StuReactRedux = connect(mapStateToProps,mapDispatchToProps)(Stu)
-
-export default StuReactRedux
+export default Login

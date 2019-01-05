@@ -2,21 +2,21 @@ import {
   handleActions
 } from 'redux-actions'
 import {
-  ADD_NUM,
-  SET_NAME
+  ASYNC_ADDNUM,
+  ASYNC_SETNAME
 } from '../types/user'
 const defaultState = {
   num: 1,
   name: '张三'
 }
 export default handleActions({
-  [ADD_NUM](state, action) {
+  [ASYNC_ADDNUM](state, action) {
     return {
       ...state,
       num: state.num + 1
     };
   },
-  [SET_NAME](state, action) {
+  [ASYNC_SETNAME](state, action) {
     console.log("action...", action)
     return {
       ...state,
