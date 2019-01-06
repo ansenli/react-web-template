@@ -2,25 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-// import {
-//   createStore,
-//   applyMiddleware
-// } from 'redux';
 import {
   Provider
 } from 'react-redux';
-// import promiseMiddleware from 'redux-promise'
 // 添加拦截器
 import './config/interceptors';
-//reducers 状态树state和逻辑操作对于数据的操作最好都放在reducers模块
-// import rootRedux from './rootRedux.js';
 import * as serviceWorker from './serviceWorker';
-// 生成状态树
-// const store = createStore(rootRedux,applyMiddleware(promiseMiddleware))
-// console.log("store....", store)
-
 import configStore from './store'
-// console.log("configStore....",configStore)
 const store = configStore(); // 这一行还不能省略
 ReactDOM.render( 
 <Provider  store ={store}>

@@ -1,6 +1,5 @@
 import React, { Component ,Fragment} from 'react';
 import { connect } from 'react-redux'
-//import { login } from '../../redux/user.redux'
 import {asyncAddNum,asyncSetNum} from '@/store/actions/user'
  
 @connect( 
